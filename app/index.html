@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Trophy Guide — GTA 6 Trophy Guide &amp; Tracker (PS5)</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI trophies on PS5: official names, descriptions and grades, cited guides, roadmap to the platinum and missable flags.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Vice Trophy Guide</h1>
+    <p class="subtitle">Every trophy, its official name, description and grade, a guide in our own words with its sources, and a tracker that remembers your progress. Works fully offline — no network, no account, no artwork borrowed from the game.</p>
+  </div>
+  <div class="progress-card" id="progressCard">
+    <p class="progress-count" id="progressCount">0 of 55 earned</p>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <p class="progress-detail" id="progressDetail">Platinum 0/1 &middot; Gold 0/2 &middot; Silver 0/6 &middot; Bronze 0/46</p>
+    <p class="progress-next" id="progressNext"></p>
+  </div>
+</header>
+
+<nav class="view-tabs" id="viewTabs">
+  <button type="button" data-view="checklist" class="active">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" data-view="missable">Missable trophies</button>
+</nav>
+
+<section class="controls" id="controls">
+  <label class="search-label">Search <input id="search" type="search" placeholder="Trophy name, mission or keyword…" autocomplete="off"></label>
+  <label>Kind <select id="kindFilter"><option value="all">All kinds</option><option value="story">Story</option><option value="mission">Named mission</option><option value="stranger">Strangers</option><option value="collectible">Collectibles</option><option value="activity">Activities</option><option value="partner">Partner</option><option value="combat">Combat</option><option value="world">World &amp; robberies</option><option value="money">Money</option><option value="completion">Completion</option><option value="misc">Secrets &amp; misc</option><option value="platinum">Platinum</option></select></label>
+  <label>Grade <select id="gradeFilter"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label>Status <select id="statusFilter"><option value="all">Earned &amp; missing</option><option value="earned">Earned only</option><option value="missing">Missing only</option></select></label>
+  <label class="check-label"><input id="missableOnly" type="checkbox"> Missable only</label>
+  <label class="check-label" title="Hides the names and descriptions of story trophies until you earn them"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+  <button id="exportBtn" type="button">Export progress</button>
+  <label class="import-label">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+  <button id="resetBtn" type="button">Reset</button>
+</section>
+<p class="filter-note" id="filterNote"></p>
+
+<main class="layout">
+  <section class="list-column">
+    <section id="roadmapSection" class="roadmap" hidden>
+      <h2>Roadmap to the platinum</h2>
+      <p>Five stages, in order. The platinum — <strong>Vice Got a Price!</strong> — pops when the other 54 are done, so the roadmap is the order to earn them in.</p>
+      <ol id="roadmapSteps"></ol>
+      <p class="roadmap-note">Built from the official descriptions: which story chapters and missions, which collectibles and their counts, and in what order. Counts marked with a source come from the trophy tracking on Exophase / PSNProfiles; anything the official list leaves open is flagged “confirm post-release” in the trophy's own guide.</p>
+    </section>
+    <section id="missableSection" class="missable-panel" hidden>
+      <h2>Missable trophies — do these when they come up</h2>
+      <p>These are flagged from the official descriptions: named story missions and single-moment stunts. A failed attempt can usually be retried, and mission replay (if the game offers it) covers the missions — confirm that after release. Everything else can be done in free roam after the story.</p>
+      <ul id="missableList"></ul>
+    </section>
+    <h2 id="listHeading">Trophy checklist</h2>
+    <p class="list-count" id="listCount"></p>
+    <ul class="trophy-list" id="trophyList"></ul>
+  </section>
+  <aside class="detail-panel" id="detailPanel" aria-live="polite">
+    <p class="detail-empty" id="detailEmpty">Select a trophy to read its guide and sources.</p>
+    <article id="detailCard" hidden>
+      <p class="detail-grade" id="detailGrade"></p>
+      <h2 id="detailName"></h2>
+      <p class="detail-desc" id="detailDesc"></p>
+      <p class="detail-meta" id="detailMeta"></p>
+      <h3>Guide</h3>
+      <p id="detailGuide"></p>
+      <h3>Steps</h3>
+      <ol id="detailSteps"></ol>
+      <h3>Sources</h3>
+      <ul id="detailSources"></ul>
+      <label class="detail-earned"><input id="detailEarned" type="checkbox"> Mark as earned</label>
+    </article>
+  </aside>
+</main>
+
+<footer>
+  <p>Official trophy names, descriptions and grades are as PlayStation publishes them, via Exophase and PSNProfiles. Guides are written in our own words for this entry and cite their sources beside each trophy. GTA 6 released 19 November 2026: where no trusted post-release guide exists yet for a trophy, its guide says so plainly instead of inventing a location or step. No Rockstar logo or official artwork is used anywhere in this guide.</p>
+  <p>Progress is stored only in your browser (localStorage). Export and import move it as a JSON file; nothing is sent anywhere.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
